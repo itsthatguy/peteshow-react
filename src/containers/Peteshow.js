@@ -40,8 +40,8 @@ class Peteshow extends Component {
   render () {
     const Peteshows = () => (
       <div>
-        {this.props.inputs.map((field, key) => (
-          <div key={key}>{field}</div>
+        {this.props.inputs.map((input, key) => (
+          <div key={key}>{input.selector} {input.value}</div>
         ))}
       </div>
     );
