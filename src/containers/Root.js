@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import Layout from 'containers/Layout';
+import Peteshow from 'containers/Peteshow';
 
 const Root = ({ store }) => {
   return (
     <Provider store={store}>
-      <Layout />
+      <Peteshow />
     </Provider>
   );
 };
