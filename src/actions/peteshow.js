@@ -2,9 +2,12 @@
 
 const generateSelector = (input) => {
   const tag = input.localName;
-  const attributes = [...input.attributes].map((attr) => {
-    return `[${attr.name}=${attr.value}]`;
-  }).join('');
+  const attributes = [...input.attributes].reduce((result, attr) => {
+    if (attr.name === 'type' || attr.name === 'name') {
+      result.push(`[${attr.name}=${attr.value}]`);
+    }
+    return result;
+  }, []).join('');
   return `${tag}${attributes}`;
 };
 
